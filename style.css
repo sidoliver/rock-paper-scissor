@@ -63,3 +63,11 @@ body {
     font-family: 'Titillium Web', sans-serif;
     font-size: 1.4rem;
 }
+.reload {
+    height: 80px;
+    width: 300px;
+    display: none;
+    padding: 20px;
+    transform: translate(540px,-80px);
+    
+}

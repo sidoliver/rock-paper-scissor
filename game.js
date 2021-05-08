@@ -30,22 +30,33 @@ function game() {
       // =====================
       if (p === c) {
         resultSection.innerHTML = `${p} and  ${c} can't beat each other. It's a tie.`;
-      } else if (
-        (p == "rock" && c == "scissor") ||
-        (p == "paper" && c == "rock") ||
-        (p == "scissor" && c == "paper")
-      ) {
-        resultSection.innerHTML = `${c} beats ${p}! You lose.`;
-        playerScore++;
-        userScore.innerHTML = playerScore;
-      } else if(
-        (p == "scissor" && c == "rock") ||
-        (p == "rock" && c == "paper") ||
-        (p == "paper" && c == "scissor") ) {
-        resultSection.innerHTML = `${p} beats ${c}! You won.`;
-        computerScore++;
-        compScore.innerHTML = computerScore;
+      } else if(p === 'rock') {
+        if(c == 'scissor') {
+          resultSection.innerHTML = `${p} beats  ${c}. You won!`;
+          userScore.innerHTML = playerScore++;
+        } else {
+          resultSection.innerHTML = `${c} beats  ${p}. You lose!`;
+          compScore.innerHTML = computerScore++;
+        }
+      } else if(p == 'paper') {
+        if(p=='rock') {
+          resultSection.innerHTML = `${p} beats ${c}. You won!`;
+          userScore.innerHTML = playerScore++;
+        } else {
+          resultSection.innerHTML = `${c} beats  ${p}. You lose!`;
+          compScore.innerHTML = computerScore++;
+        }
+      } else if (p == 'scissor') {
+        if(c == 'paper') {
+          resultSection.innerHTML = `${p} beats ${c}. You won!`;
+          userScore.innerHTML = playerScore++;
+        } else {
+          resultSection.innerHTML = `${c} beats  ${p}. You lose!`;
+          compScore.innerHTML = computerScore++;
+          
+        }
       }
+      
      
     }
     
