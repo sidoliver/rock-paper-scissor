@@ -10,6 +10,8 @@ function game() {
     const btns = document.querySelectorAll(".button");
     btns.forEach(function (btn) {
       btn.addEventListener("click", function () {
+        const audio = new Audio('audio/button.mp3');
+        audio.play();
         moves++;
         movesLeft.innerText = `Moves Left: ${10 - moves}`;
         //  compute selection
@@ -65,16 +67,20 @@ function game() {
     }
     function gameOver(buttons, moves) {
       buttons.forEach(function (btn) {
+        const audio = new Audio('audio/win.mp3');
         const reloadBtn = document.querySelector(".reload");
         btn.style.display = "none";
         moves.style.display = "none";
         resultSection.innerHTML = "game finished";
         if (computerScore == playerScore) {
+          audio.play();
           resultSection.innerHTML = `It's a tie`;
         } else if (playerScore > computerScore) {
+          audio.play();
           resultSection.innerHTML = `congrats! You won the game`;
           resultSection.style.color = 'green';
         } else {
+          audio.play();
           resultSection.innerHTML = `You lose from a machine!`;
           resultSection.style.color = 'red';
         }

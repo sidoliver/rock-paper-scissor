@@ -80,3 +80,6 @@
 .reload-btn {
     width: 200px;
 }
+@media screen and (max-width: 600px) {
+
+}
